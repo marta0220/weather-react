@@ -1,0 +1,21 @@
+.Form .Input {
+  box-shadow: 0px 5px 20px rgba(226, 193, 91, 0.2);
+  margin: 10px 0;
+  border-radius: 5px 0 0 5px;
+  padding: 2px;
+  border: 1px solid #ffc433;
+}
+.Form .Search {
+  box-shadow: 0px 5px 20px rgba(226, 193, 91, 0.2);
+  border-radius: 0 5px 5px 0;
+  padding: 2px 8px;
+  color: white;
+  transition: all 200ms ease-in-out;
+  background-color: #ffc433;
+  border: 1px solid transparent;
+}
+.Form .Search:hover {
+  background-color: transparent;
+  color: #ffc433;
+  border: 1px solid #ffc433;
+}
