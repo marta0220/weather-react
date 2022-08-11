@@ -1,0 +1,51 @@
+:root {
+  --primary-color: #ffc433;
+  --secondary-color: #7b8cce;
+}
+Form .input,
+Form .search-button {
+  box-shadow: 0px 5px 20px rgba(226, 193, 91, 0.2);
+}
+Form .input {
+  margin: 10px 0;
+  border-radius: 5px 0 0 5px;
+  padding: 2px;
+  border: 1px solid var(--primary-color);
+  color: var(--secondary-color);
+}
+
+Form .search-button {
+  border-radius: 0 5px 5px 0;
+  padding: 2px 8px;
+  color: white;
+  transition: all 200ms ease-in-out;
+  background-color: var(--primary-color);
+  border: 1px solid transparent;
+}
+Form .search-button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.City {
+  font-weight: 700;
+  font-size: 35px;
+  color: var(--secondary-color);
+}
+.Date {
+  font-size: 12px;
+  color: #8e8c87;
+}
+.Degrees {
+  font-size: 35px;
+}
+.Degrees .Units {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+}
+.Parameters {
+  border-top: 1px solid var(--primary-color);
+}
+.Parameters .Value {
+  color: var(--secondary-color);
+}
