@@ -21,7 +21,7 @@ export default function WeatherTemperature(props) {
           <a href="#" className="d-inline active">
             C
           </a>{" "}
-          l{" "}
+          |{" "}
           <a href="#" onClick={showFarhenheit} className="d-inline">
             F
           </a>
