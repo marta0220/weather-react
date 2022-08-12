@@ -20,19 +20,20 @@ export default function Weather(props) {
     });
     setLoaded(true);
   }
+  function changeCity(event) {
+    setCity(event.target.value);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
   function search() {
     const apiKey = "d873f8799b310a5282754959e9912176";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showWeather);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-    search();
-  }
-  function changeCity(event) {
-    setCity(event.target.value);
-  }
+
   if (loaded) {
     return (
       <div className="CurrentWeather">

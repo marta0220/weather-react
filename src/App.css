@@ -4,7 +4,7 @@
   box-shadow: inset 0px 5px 20px rgba(226, 193, 91, 0.1);
   border: 1px solid #ffc433;
   padding: 10px;
-  margin: 5% 15%;
+  margin: 5% 15% 10px;
   border-radius: 5px;
 }
 @media (max-width: 600px) {
