@@ -5,6 +5,7 @@ import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [loaded, setLoaded] = useState(false);
+  const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({});
   function showWeather(response) {
     setWeather({
@@ -15,22 +16,33 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       windSpeed: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
-      visibility: response.data.visibility / 1000,
+      visibility: Math.round(response.data.visibility / 1000),
     });
-
     setLoaded(true);
   }
-
+  function search() {
+    const apiKey = "d873f8799b310a5282754959e9912176";
+    let units = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(showWeather);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function changeCity(event) {
+    setCity(event.target.value);
+  }
   if (loaded) {
     return (
       <div className="CurrentWeather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="search"
             placeholder="Your city"
-            autoFocus
             autoComplete="off"
             className="input"
+            onChange={changeCity}
           />
           <input type="submit" value="Search" className="search-button" />
         </form>
@@ -38,9 +50,6 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "d873f8799b310a5282754959e9912176";
-    let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(showWeather);
+    search();
   }
 }
