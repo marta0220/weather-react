@@ -11,7 +11,7 @@ export default function Weather(props) {
     setWeather({
       name: response.data.name,
       date: new Date(response.data.dt * 1000),
-      temperature: Math.round(response.data.main.temp),
+      temperature: response.data.main.temp,
       icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       windSpeed: Math.round(response.data.wind.speed),

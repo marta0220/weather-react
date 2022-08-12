@@ -43,6 +43,9 @@ form .search-button:hover {
   color: rgba(0, 0, 0, 0.4);
   font-size: 20px;
 }
+.Degrees .Units .active {
+  color: var(--secondary-color);
+}
 .Parameters {
   border-top: 1px solid var(--primary-color);
 }
