@@ -2,11 +2,11 @@
   --primary-color: #ffc433;
   --secondary-color: #7b8cce;
 }
-Form .input,
-Form .search-button {
+form .input,
+form .search-button {
   box-shadow: 0px 5px 20px rgba(226, 193, 91, 0.2);
 }
-Form .input {
+form .input {
   margin: 10px 0;
   border-radius: 5px 0 0 5px;
   padding: 2px;
@@ -14,7 +14,7 @@ Form .input {
   color: var(--secondary-color);
 }
 
-Form .search-button {
+form .search-button {
   border-radius: 0 5px 5px 0;
   padding: 2px 8px;
   color: white;
@@ -22,7 +22,7 @@ Form .search-button {
   background-color: var(--primary-color);
   border: 1px solid transparent;
 }
-Form .search-button:hover {
+form .search-button:hover {
   background-color: transparent;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);

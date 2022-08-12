@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import CurrentWeather from "./CurrentWeather";
+import Weather from "./Weather";
 import Forecast from "./Forecast";
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <CurrentWeather defaultCity="London" />
+            <Weather defaultCity="London" />
           </div>
           <div className="col-md-6">
             <Forecast day="Monday" />
