@@ -18,11 +18,11 @@ export default function WeatherTemperature(props) {
         {Math.round(props.celsius)}°
         <span className="Units">
           {" "}
-          <a href="#" className="d-inline active">
+          <a href="/" className="d-inline active">
             C
           </a>{" "}
           |{" "}
-          <a href="#" onClick={showFarhenheit} className="d-inline">
+          <a href="/" onClick={showFarhenheit} className="d-inline">
             F
           </a>
         </span>
@@ -34,11 +34,11 @@ export default function WeatherTemperature(props) {
         {convertToFarhenheit()}°
         <span className="Units">
           {" "}
-          <a href="#" onClick={showCelsius} className="d-inline ">
+          <a href="/" onClick={showCelsius} className="d-inline ">
             C
           </a>{" "}
           l{" "}
-          <a href="#" className="d-inline active">
+          <a href="/" className="d-inline active">
             F
           </a>
         </span>
