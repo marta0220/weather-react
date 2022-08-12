@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CurrentWeather.css";
+import FormattedDate from "./FormattedDate";
 export default function CurrentWeather(props) {
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
   function showWeather(response) {
     setWeather({
       name: response.data.name,
+      date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
@@ -14,8 +16,8 @@ export default function CurrentWeather(props) {
       humidity: response.data.main.humidity,
       visibility: response.data.visibility / 1000,
     });
+
     setLoaded(true);
-    console.log(response.data.weather[0].icon);
   }
 
   if (loaded) {
@@ -34,7 +36,9 @@ export default function CurrentWeather(props) {
         <div className="row">
           <div className="col-md-6">
             <div className="City"> {weather.name} </div>
-            <div className="Date">Sunday, 14:00</div>
+            <div className="Date">
+              <FormattedDate date={weather.date} />
+            </div>
             <div className="Degrees">
               {weather.temperature}°<span className="Units"> C l F</span>
             </div>
