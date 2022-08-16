@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import Forecast from "./Forecast";
 
 export default function Weather(props) {
   const [loaded, setLoaded] = useState(false);
@@ -10,6 +11,7 @@ export default function Weather(props) {
   function showWeather(response) {
     setWeather({
       name: response.data.name,
+      coords: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       icon: response.data.weather[0].icon,
@@ -36,18 +38,23 @@ export default function Weather(props) {
 
   if (loaded) {
     return (
-      <div className="CurrentWeather">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            placeholder="Your city"
-            autoComplete="off"
-            className="input"
-            onChange={changeCity}
-          />
-          <input type="submit" value="Search" className="search-button" />
-        </form>
-        <WeatherInfo data={weather} />
+      <div className="CurrentWeather row">
+        <div className="col-md-6">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              placeholder="Your city"
+              autoComplete="off"
+              className="input"
+              onChange={changeCity}
+            />
+            <input type="submit" value="Search" className="search-button" />
+          </form>
+          <WeatherInfo data={weather} />
+        </div>
+        <div className="col-md-6">
+          <Forecast data={weather} />
+        </div>
       </div>
     );
   } else {

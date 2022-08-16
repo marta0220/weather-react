@@ -1,7 +1,10 @@
 .Forecast {
   border-left: 1px solid #ffc433;
+  font-size: 26px;
   text-align: center;
+  line-height: 1.8;
 }
+
 @media (max-width: 600px) {
   .Forecast {
     border-left: none;
