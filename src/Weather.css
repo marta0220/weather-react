@@ -48,6 +48,8 @@ form .search-button:hover {
 }
 .Parameters {
   border-top: 1px solid var(--primary-color);
+  margin-left: 2px;
+  padding-top: 8px;
 }
 .Parameters .Value {
   color: var(--secondary-color);

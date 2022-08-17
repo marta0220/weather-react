@@ -1,8 +1,8 @@
 .Forecast {
   border-left: 1px solid #ffc433;
-  font-size: 26px;
+  font-size: 24px;
   text-align: center;
-  line-height: 1.8;
+  line-height: 2;
 }
 .Forecast .day {
   color: #464954;
