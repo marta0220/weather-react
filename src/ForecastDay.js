@@ -2,7 +2,15 @@ import React from "react";
 export default function ForecastDay(props) {
   function day() {
     let date = new Date(props.data.dt * 1000);
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
     let day = days[date.getDay()];
     return day;
   }

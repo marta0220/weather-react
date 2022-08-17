@@ -11,7 +11,19 @@ export default function Parameters(props) {
     setForecast(response.data.daily);
   }
   if (loaded) {
-    return <ForecastDay data={forecast[0]} />;
+    return (
+      <div className="WeatherForecast">
+        {forecast.map(function(dailyForecast, index) {
+          if (index < 5) {
+            return (
+              <div key={index}>
+                <ForecastDay data={dailyForecast} />
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
   } else {
     const apiKey = "d873f8799b310a5282754959e9912176";
     let latitude = props.data.coords.lat;

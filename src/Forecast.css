@@ -4,11 +4,18 @@
   text-align: center;
   line-height: 1.8;
 }
+.Forecast .day {
+  color: #464954;
+  text-align: left;
+}
 
 @media (max-width: 600px) {
   .Forecast {
     border-left: none;
     border-top: 1px solid #ffc433;
+    text-align: center;
+  }
+  .Forecast .day {
     text-align: center;
   }
 }
